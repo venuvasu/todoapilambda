@@ -1,6 +1,6 @@
 from functools import cached_property
 from typing import TypedDict, Literal, List, Dict, Any
-from datetime import datetime
+from datetime import UTC, datetime
 import json
 
 # Python 3.8 TypedDict for structured data
@@ -17,7 +17,7 @@ TodoStatus = Literal['completed', 'pending', 'all']
 class TodoAnalytics:
     def __init__(self, todos: List[Dict[str, Any]]):
         self._todos = todos
-        self._last_updated = datetime.utcnow()
+        self._last_updated = datetime.now(UTC).replace(tzinfo=None)
     
     @cached_property  # Python 3.8 cached_property
     def stats(self) -> TodoStats:

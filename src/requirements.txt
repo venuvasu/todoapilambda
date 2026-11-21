@@ -1,5 +1,5 @@
-boto3>=1.26.0
-# Python 3.8 specific - uses functools.cached_property, typing.Literal, typing.TypedDict
+boto3>=1.36.0
+# Requires Python 3.13 (AWS Lambda python3.13 runtime) - uses functools.cached_property, typing.Literal, typing.TypedDict
 # math.prod() and enhanced statistics module
 # Assignment expressions (walrus operator :=)
 # Positional-only parameters (/)

@@ -1,7 +1,7 @@
 import json
 import logging
 import os
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Dict, Any
 from .todo_service import TodoService
 
@@ -141,6 +141,6 @@ def error_response(status_code: int, message: str, /) -> Dict[str, Any]:
         'headers': get_cors_headers(),
         'body': json.dumps({
             'error': message,
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(UTC).replace(tzinfo=None).isoformat()
         })
     }

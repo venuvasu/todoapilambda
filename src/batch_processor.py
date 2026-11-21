@@ -1,7 +1,7 @@
 import math
 import statistics
 from typing import List, Dict, Any, Iterator, Tuple
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from collections import Counter
 
 class TodoBatchProcessor:
@@ -92,7 +92,7 @@ class TodoBatchProcessor:
             
             try:
                 created = datetime.fromisoformat(todo['created_at'].replace('Z', '+00:00'))
-                age_hours = (datetime.utcnow() - created).total_seconds() / 3600
+                age_hours = (datetime.now(UTC).replace(tzinfo=None) - created).total_seconds() / 3600
             except (ValueError, KeyError):
                 age_hours = 0
             
