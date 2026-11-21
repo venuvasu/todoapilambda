@@ -4,7 +4,7 @@ Transform: AWS::Serverless-2016-10-31
 Globals:
   Function:
     Timeout: 30
-    Runtime: python3.8
+    Runtime: python3.13
     Environment:
       Variables:
         DYNAMODB_TABLE: !Ref TodoTable

@@ -1,6 +1,6 @@
 # Todo API Lambda Function
 
-A production-ready serverless Todo API built with AWS Lambda, DynamoDB, and Python 3.8.
+A production-ready serverless Todo API built with AWS Lambda, DynamoDB, and Python 3.13.
 
 ## Features
 
@@ -11,7 +11,7 @@ A production-ready serverless Todo API built with AWS Lambda, DynamoDB, and Pyth
 - **Security Headers** - Production-ready security configurations
 - **Comprehensive Logging** - Structured logging with error tracking
 - **Unit Tests** - 17 passing tests with mock services
-- **Python 3.8 Compatible** - Uses modern Python features (walrus operator, positional-only params)
+- **Python 3.13** - Runs on the AWS Lambda python3.13 runtime; uses modern Python features (walrus operator, positional-only params)
 
 ## API Endpoints
 
@@ -58,7 +58,7 @@ PUT /todos/{id}
 
 - AWS CLI configured
 - SAM CLI installed
-- Python 3.8+
+- Python 3.13+
 - pytest (for testing)
 
 ## Quick Start
@@ -152,7 +152,7 @@ sam deploy --parameter-overrides Environment=prod
 ## Infrastructure
 
 The SAM template creates:
-- **Lambda Function** - Python 3.8 runtime with 30s timeout
+- **Lambda Function** - Python 3.13 runtime with 30s timeout
 - **DynamoDB Table** - Pay-per-request billing with point-in-time recovery
 - **API Gateway** - RESTful endpoints with CORS
 - **IAM Roles** - Least privilege permissions
